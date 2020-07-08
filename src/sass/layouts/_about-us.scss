@@ -1,0 +1,93 @@
+.about{
+    @media screen and (min-width:$mobile){
+    padding-top:$sec-pad-mob;
+    padding-bottom: $sec-pad-mob;
+    }
+    @media screen and (min-width:$tablet){
+        padding-top:$sec-pad-tab;
+        padding-bottom: $sec-pad-tab;
+    }
+    @media screen and (min-width:$desktop){
+        padding-top:$sec-pad-desk;
+        padding-bottom: $sec-pad-desk;
+    }
+}
+
+
+
+.about-images{
+    @media screen and (max-width:$mobile-max) {
+        display:none;   
+    }
+    @media screen and (min-width:$tablet) {
+        width: calc((100% - 30px) / 2);
+    }
+    @media screen and (min-width:$desktop){
+    display:flex;
+    width: calc((100% - 64px) / 2);
+    }
+}
+
+.about-image{
+    @media screen and (min-width:$desktop){
+        &:first-child{
+            margin-right:30px;
+        }
+    }
+}
+
+.about-content{
+    @media screen and (min-width:$tablet) {
+        width: calc((100% - 30px) / 2);
+        margin-left: 30px;
+    }
+    @media screen and (min-width:$desktop){
+        margin-left: 64px;
+    }
+}
+
+.container.about-us{
+    display: flex;
+}
+
+.about-us{
+    color:$header-font-color;
+}
+
+.sub-title.about-us:before{
+    background-color:$header-font-color;
+}
+
+.about-title{
+    @include font(700, 28px, 1.18, Raleway);
+    margin-bottom:20px;
+    @media screen and (min-width:$desktop){
+    @include font(700, 42px, 1.17, 0.05em, Raleway);
+    }
+
+}
+
+.slogan.about-us{
+    color:$additional-grey-color;
+    margin-bottom:20px;
+}
+
+.article.about-us {
+    @include font(400, 14px, 1.86);
+    color:$additional-grey-color;
+    margin-bottom:40px;
+}
+
+.button-order{
+    padding: 12px 20px;
+    @extend %border-button;
+    @include font(600, 12px, 1.33, 0.09em);
+    text-transform: uppercase;
+    color: $header-font-color;
+
+    &:hover,
+    &:focus{
+        background-color: $accent-font-color;
+        color:$additional-white-color;
+    }
+}
