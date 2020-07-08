@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /*
  * Главный файл стилей.
  * Все паршалы подключаются сюда.
@@ -5,3 +6,15 @@
 
 // Стили для файла с примером HTML-фрагмента
 @import './example';
+=======
+@import './base/normalize';
+@import '../sass/utils/variables';
+@import '../sass/utils/breakpoints';
+@import '../sass/utils/mixin';
+@import '../sass/utils/placeholder';
+@import '../sass/base/common';
+@import '../sass/components/sprite-icons';
+@import '../sass/layouts/header';
+@import '../sass/layouts/about-us';
+
+>>>>>>> Stashed changes
