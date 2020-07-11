@@ -3,7 +3,7 @@
   <!-- Онлайн-запись -->
   <div class="first-container">
     <div class="form-container container">
-      <form class="form-footer">
+      <form class="form-footer" autocomplete="off">
         <p class="form-title">Онлайн-запись</p>
 
         <div class="form-flex">
@@ -15,6 +15,7 @@
               name="name"
               id="name"
               placeholder=" "
+              required
             />
             <label class="form-label" for="name">ИМЯ*</label>
           </div>
@@ -27,6 +28,7 @@
               name="tel"
               id="tel"
               placeholder=" "
+              required
             />
             <label class="form-label" for="tel">ТЕЛЕФОН*</label>
           </div>
@@ -52,7 +54,7 @@
   <div class="second-container">
     <div class="contacts-container container">
       <div class="address-container">
-        <p class="contacts-title">Контакты</p>
+        <p class="contacts-title"><a name="contacts"></a>Контакты</p>
         <address class="address">
           <ul class="address-list">
             <li class="address-item">
@@ -64,11 +66,11 @@
                 <svg class="icon-form">
                   <use href="./images/sprite.svg#icon-map-pin"></use>
                 </svg>
-                ул. Васильковая, 7А, Киев, 08132</a
+                ул. Васильковая, 7А,<br class="line-brake" />Киев, 08132</a
               >
             </li>
             <li class="address-item">
-              <a class="contacts-link phone" href="tel:+38 044 111 11 11">
+              <a class="contacts-link" href="tel:+38 044 111 11 11">
                 <svg class="icon-form">
                   <use href="./images/sprite.svg#icon-phone"></use>
                 </svg>
@@ -76,7 +78,7 @@
               >
             </li>
             <li class="address-item">
-              <a class="contacts-mail mail" href="mailto:barbershop@email.com">
+              <a class="contacts-link mail" href="mailto:barbershop@email.com">
                 <svg class="icon-form">
                   <use href="./images/sprite.svg#icon-mail"></use>
                 </svg>
@@ -89,8 +91,8 @@
 
       <!-- Время работы -->
       <div class="address-container">
-        <p class="schedule">время работы</p>
-        <p class="contacts-link">Ежедневно с 9:00 до 22:00</p>
+        <p class="schedule-text">время работы</p>
+        <p class="schedule-time">Ежедневно с 9:00 до 22:00</p>
       </div>
     </div>
   </div>
@@ -99,7 +101,7 @@
 <div class="copyright-container container">
   <!-- Социальные сети -->
   <ul class="social-list">
-    <li class="social-item line"></li>
+    <!-- <li class="social-item line"></li> -->
     <li class="social-item"><a class="social-link" href="">Instagram</a></li>
     <li class="social-item"><a class="social-link" href="">Youtube</a></li>
   </ul>
