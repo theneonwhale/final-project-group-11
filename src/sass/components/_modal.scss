@@ -44,8 +44,6 @@
   box-shadow: $modal-shadow;
   border-radius: 4px;
 
-  //т.к. это свойство для всех экранов, где чаще форма вся не будет помещаться, то
-  //лучше крутить, а не перемещать, иначе не будет видно на экране
   transform: perspective(600px) rotateX(0) scale(1);
   @include transition(transform);
 
