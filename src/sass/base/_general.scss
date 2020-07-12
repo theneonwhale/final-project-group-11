@@ -40,7 +40,7 @@ button {
     padding-left: 39px;
     padding-right: 39px;
   }
-  
+
   @media screen and (min-width: $desktop) {
     max-width: $desktop;
     padding-left: 55px;
@@ -54,16 +54,6 @@ img {
   height: auto;
 }
 
-a {
-  text-decoration: none;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 h1,
 h2,
 h3,
@@ -73,4 +63,25 @@ h6,
 p,
 label {
   margin-top: 0px;
+}
+
+.button-order {
+  display: inline-block;
+  padding: 12px 20px;
+  text-transform: uppercase;
+
+  border: 1px solid $accent-color;
+  border-radius: 25px;
+  outline: none;
+
+  @include font(600, 12px, 1.33, 0.09em);
+
+  color: $primary-grey-color;
+  @include transition(color, background-color);
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $primary-white-color;
+  }
 }
