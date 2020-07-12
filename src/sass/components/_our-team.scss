@@ -2,33 +2,36 @@
   padding: $sec-pad-mob 0;
   background-color: $bg-grey-color;
 
-  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+  @media screen and (min-width: $tablet) {
     padding: $sec-pad-tab 0;
-
-    & .container {
-      padding: 0 159px;
-    }
   }
 
   @media screen and (min-width: $desktop) {
     padding: $sec-pad-desk 0;
   }
 }
+.tablet-container {
+  @media screen and (max-width: $desktop - 1) {
+    @include flex($cross: flex-start);
+    flex-direction: column;
+  }
+}
 
 .team-description {
   position: relative;
-  margin: 0 0 0 80px;
-  padding-bottom: 20px;
+  padding-left: 80px;
+  margin-bottom: 20px;
 
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  letter-spacing: 0.1em;
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    margin-left: 120px;
+  }
+
+  @include font(600, 11px, 1.36, 0.1em);
   text-transform: uppercase;
 
   &:before {
     position: absolute;
-    left: -80px;
+    left: 0;
     top: 0.6em;
     content: '';
     display: block;
@@ -39,36 +42,44 @@
 }
 
 .team-title {
-  margin: 0;
-  padding-bottom: 44px;
+  margin-bottom: 44px;
 
-  font-family: $heading-font;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
+    margin-left: 120px;
+  }
+
+  @include font(700, 42px, 1.17, 0.05em, $heading-font);
 }
 
 .people {
+  @include flex();
+  flex-wrap: wrap;
+
   @media screen and (min-width: $desktop) {
-    display: flex;
-    justify-content: space-between;
+    margin: -15px;
   }
 
   & .item {
+    @media screen and (max-width: $tablet - 1) {
+      max-width: 418px;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 450px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: calc((100% - 90px) / 3);
+      margin: 15px;
+    }
     text-align: center;
   }
 
   & .item:not(:last-child) {
-    margin-bottom: 64px;
-
-    @media screen and (min-width: $desktop) {
-      margin-bottom: 0px;
+    @media screen and (max-width: $desktop - 1) {
+      margin-bottom: 64px;
     }
   }
 
   & .thumb {
-    height: 346px;
     margin-bottom: 30px;
   }
 
@@ -85,15 +96,14 @@
   }
 
   & .name {
-    margin: 0 0 8px 0;
-
+    margin-bottom: 8px;
     font-size: 18px;
     line-height: 1.39;
     letter-spacing: 0.02em;
   }
 
   & .profession {
-    margin: 0 0 30px 0;
+    margin-bottom: 30px;
 
     font-size: 14px;
     line-height: 1.36;
