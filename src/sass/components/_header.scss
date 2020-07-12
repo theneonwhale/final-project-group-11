@@ -116,7 +116,7 @@
     height: 40px;
     border: none;
     padding: 0;
-    outline-width: 0px;
+    outline-width: 0;
     cursor: pointer;
 
     background-color: inherit;
@@ -301,7 +301,7 @@
 
   @media screen and (min-width: $tablet) {
     margin-right: 40px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 
@@ -353,7 +353,7 @@
   content: '';
   position: absolute;
   top: 0.5em;
-  left: 0%;
+  left: 0;
   width: 60px;
   height: 1px;
 
