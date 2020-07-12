@@ -28,14 +28,14 @@
   margin: 0 auto;
   max-width: 450px;
 
-  @media screen and (min-width: $tablet) {
-    position: absolute;
-    max-width: 528px;
+  @media screen and (min-height: 930px) {
     top: 50%;
-    left: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 528px;
     padding: 55px;
-    margin-top: 100px;
-    transform: translate(-50%, -50%);
   }
 
   color: $primary-grey-color;
@@ -44,11 +44,13 @@
   box-shadow: $modal-shadow;
   border-radius: 4px;
 
-  transform: perspective(600px) scale(1);
+  //т.к. это свойство для всех экранов, где чаще форма вся не будет помещаться, то
+  //лучше крутить, а не перемещать, иначе не будет видно на экране
+  transform: perspective(600px) rotateX(0) scale(1);
   @include transition(transform);
 
   .backdrop.is-hidden & {
-    transform: translate(-50%, -50%) perspective(600px) scale(0.7);
+    transform: perspective(600px) rotateX(90deg) scale(0.5);
   }
 
   &-title {
@@ -87,27 +89,18 @@
     left: 0;
     color: $primary-grey-color;
     transform: translateY(-50%);
-    transition: transform 250ms $timing-function, color 250ms $timing-function;
-  }
-
-  & .button {
-    max-width: 160px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  & .button:hover {
-    color: $primary-white-color;
-    background-color: $accent-color;
+    @include transition(transform, color, font);
   }
 
   &-field:focus-within > &-label {
     color: $accent-color;
     transform: translateY(calc(-50% - 32px));
+    @include font(400, 10px, 1.1, 0.01em);
   }
 
   &-input:not(:placeholder-shown) + &-label {
     transform: translateY(calc(-50% - 32px));
+    @include font(400, 10px, 1.1, 0.01em);
   }
 }
 
@@ -119,29 +112,27 @@
 
 .datetime-input {
   @extend %modal-input-style;
-}
 
-.datetime-input:focus {
-  border-color: $accent-color;
-  outline-color: $accent-color;
+  &:focus {
+    border-color: $accent-color;
+    outline-color: $accent-color;
+  }
 }
 
 .datetime-label {
   display: inline-block;
   padding: 5px 0;
   color: $primary-grey-color;
-  transition: color 250ms $timing-function;
-}
+  @include transition(color);
 
-.datetime-field:focus-within > .datetime-label,
-.datetime-input:not(:placeholder-shown) + .datetime-label {
-  color: $accent-color;
+  .datetime-field:focus-within > &,
+  .datetime-input:not(:placeholder-shown) + & {
+    color: $accent-color;
+  }
 }
 
 // Выбор мастера
 .barber-field {
-  @include flex($cross: stretch);
-  flex-direction: column;
   @extend %modal-field-width;
 
   @include font(400, 14px, 1.14, 0.01em);
@@ -153,21 +144,27 @@
   display: inline-block;
   padding: 5px 0;
   color: $primary-grey-color;
-  transition: color 250ms $timing-function;
-}
+  @include transition(color);
 
-.barber-field:focus-within > .barber-label,
-.barber-input:not(:placeholder-shown) + .barber-label {
-  color: $accent-color;
+  .barber-field:focus-within > &,
+  .barber-input:not(:placeholder-shown) + & {
+    color: $accent-color;
+  }
 }
 
 .barbers {
-  @include flex($base: space-between, $cross: stretch);
+  @include flex(space-between, stretch);
   padding: 12px 10px;
 }
 
 .barber-choice {
-  @include flex($base: flex-end, $cross: stretch);
+  @include flex(flex-end, stretch);
+  font-weight: 700;
+
+  &:last-child {
+    font-weight: 400;
+    text-transform: none;
+  }
 }
 
 .barber-name {
@@ -176,7 +173,7 @@
 
 // Выбор услуги
 .services-field {
-  @include flex($base: flex-start, $cross: stretch);
+  @include flex(flex-start, stretch);
   padding-top: 0;
   padding-left: 0;
   padding-right: 10px;
@@ -196,21 +193,21 @@
   margin-right: 20px;
 
   color: $primary-grey-color;
-  transition: color 250ms $timing-function;
-}
+  @include transition(color);
 
-.services-field:focus-within > .services-label {
-  color: $accent-color;
-}
-
-.services-field:focus-within > .services-choice {
-  outline-color: $accent-color;
+  .services-field:focus-within > & {
+    color: $accent-color;
+  }
 }
 
 .services-choice {
   width: 100%;
   border: none;
   border-bottom: 1px solid $primary-grey-color;
+
+  .services-field:focus-within > & {
+    outline-color: $accent-color;
+  }
 }
 
 // Сообщение
@@ -221,11 +218,12 @@
 
 .modal-message-input {
   @extend %modal-input-style;
-}
+  resize: none;
 
-.modal-message-input:focus {
-  border-color: $accent-color;
-  outline-color: $accent-color;
+  &:focus {
+    border-color: $accent-color;
+    outline-color: $accent-color;
+  }
 }
 
 .modal-message-label {
@@ -235,37 +233,39 @@
   padding-bottom: 5px;
 
   color: $primary-grey-color;
-  transition: color 250ms $timing-function;
-}
+  @include transition(color);
 
-.modal-message-field:focus-within > .modal-message-label,
-.modal-message-input:not(:placeholder-shown) + .modal-message-label {
-  color: $accent-color;
+  .modal-message-field:focus-within > &,
+  .modal-message-input:not(:placeholder-shown) + & {
+    color: $accent-color;
+  }
 }
 
 // Политика конфиденциальности
 .policy {
-  @include flex();
-  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 30px;
   text-transform: none;
 }
 
 .personal-data {
-  @include flex();
+  position: relative;
+  @include flex(left);
   margin-bottom: 10px;
 
   @include font(400, 12px, 1.16, 0.03em);
+
   @media screen and (min-width: $tablet) {
     @include font(400, 14px, 1.71, 0.03em);
   }
 }
 
 .confidentiality {
-  @include flex();
+  position: relative;
+  @include flex(left);
 
   @include font(400, 12px, 1.16, 0.03em);
+
   @media screen and (min-width: $tablet) {
     @include font(400, 14px, 1.71, 0.03em);
   }
@@ -273,22 +273,10 @@
   .agreement {
     color: $accent-color;
   }
-
-  .agreement:active,
-  .agreement:visited {
-    color: $accent-color;
-  }
 }
 
 .checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  @extend %visually-hidden;
 }
 
 .icon-modal-checkbox {
@@ -298,18 +286,16 @@
   margin-right: 9px;
   border: 2px solid $primary-grey-color;
   border-radius: 2px;
-  transition: border-color 250ms $timing-function,
-    background-image 250ms $timing-function,
-    background-color 250ms $timing-function;
-}
+  @include transition(border-color, background-image, background-color);
 
-.checkbox:checked + .icon-modal-checkbox {
-  border-color: $accent-color;
-  background-image: url(../images/modal/checkbox.svg);
-  background-color: $accent-color;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-origin: border-box;
+  .checkbox:checked + & {
+    border-color: $accent-color;
+    background-image: url(../images/modal/checkbox.svg);
+    background-color: $accent-color;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+  }
 }
 
 // Кнопка закрытия модалки
@@ -329,14 +315,15 @@
 
 .icon-modal-close {
   fill: $primary-grey-color;
-  transition: fill 250ms $timing-function;
-}
+  @include transition(fill);
 
-.button-close:hover .icon-modal-close {
-  fill: $accent-color;
+  .button-close:hover & {
+    fill: $accent-color;
+  }
 }
 
 .button-submit {
-  @extend .button-order;  
+  @extend .button-order;
   min-width: max-content;
+  margin: 0 auto;
 }
