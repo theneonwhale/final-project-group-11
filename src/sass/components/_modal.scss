@@ -14,6 +14,11 @@
     opacity: 0;
     pointer-events: none;
   }
+
+  &-area {
+    position: absolute;
+    @include all-space-tl();
+  }
 }
 
 // Модальное окно
