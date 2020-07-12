@@ -22,11 +22,11 @@
   position: relative;
   padding-left: 80px;
   margin-bottom: 44px;
-  @include font(600, 11px, 1.9, 0.1em);
+  @include font(600, 11px, 1.91, 0.1em);
   text-transform: uppercase;
 
   @media screen and (min-width: $tablet) {
-    line-height: 1.4;
+    line-height: 1.36;
   }
 
   &:before {
