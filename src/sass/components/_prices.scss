@@ -1,17 +1,13 @@
-.prices .container {
-  padding: $sec-pad-mob $cont-pad-mob;
-  @media screen and (min-width: $tablet - 1) {
-    padding: $sec-pad-tab $cont-pad-tab;
-  }
-  @media screen and (min-width: $desktop - 1) {
-    padding: $sec-pad-desk $cont-pad-desk;
-  }
+.section.prices {
+  margin: 0 auto;
 
-  background-image: linear-gradient($gradient-price-main, $gradient-price-main),
-    url(../images/prices/prices.jpg);
+  //Фон для экранов до 480 рх
+
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: linear-gradient($gradient-price-main, $gradient-price-main),
+    url(../images/prices/prices.jpg);
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
@@ -31,7 +27,8 @@
       ),
       url(../images/prices/prices@3x.jpg);
   }
-  @media screen and (min-width: $tablet) {
+
+  @media screen and (min-width: $mobile + 1) {
     background-image: linear-gradient(
         $gradient-price-main,
         $gradient-price-main
@@ -56,7 +53,9 @@
         url(../images/prices/prices-tablet@3x.jpg);
     }
   }
-  @media screen and (min-width: $desktop) {
+
+  @media screen and (min-width: $tablet + 1) {
+    max-width: $biggest-width;
     background-image: linear-gradient(
         $gradient-price-main,
         $gradient-price-main
@@ -81,95 +80,91 @@
         url(../images/prices/prices-desktop@3x.jpg);
     }
   }
-  & .title {
-    @include font(700, 42px, 1.17, 0.05em, $heading-font);
-    margin-top: 0;
-    margin-bottom: 44px;
-    color: $primary-white-color;
-  }
-  & .sub-title {
-    margin-top: 0;
-    margin-bottom: 20px;
-  }
 }
-.services-prices {
-  margin-bottom: 50px;
-  padding: 30px;
-  @media screen and (max-width: $desktop - 1) {
-    background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
-  }
 
-  @media screen and (min-width: $tablet - 1) and (max-width: $desktop - 1) {
-    padding: 30px 40px;
-  }
-}
-.price-list {
-  & .left-item {
-    margin-bottom: 20px;
-  }
-  & .item {
-    color: $secondary-grey-color;
-    @include font($size: 14px, $height: 2.14);
-
-    display: flex;
-    align-items: baseline;
-
-    @media screen and (min-width: $tablet) {
-      @include font($size: 18px, $height: 1.67);
-    }
-  }
-  & .item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-  & .underline {
-    height: 1px;
-    flex-grow: 1;
-
-    margin: 0 6px;
-
-    background-color: rgba(157, 164, 189, 0.12);
-  }
-}
-.prices .order-box {
+.container.prices {
   text-align: center;
 }
-.prices .order-link {
-  padding: 12px 20px;
 
+.sub-title.prices {
+  text-align: left;
+}
+
+.prices-title {
+  @include font(700, 42px, 1.17, 0.05em, $heading-font);
+  margin-bottom: 44px;
+  text-align: left;
   color: $primary-white-color;
-  text-transform: uppercase;
-  @include font(600, 12px, 1.33, 0.09em);
-
-  background-color: transparent;
-
-  border: 1px solid $accent-color;
-  border-radius: 25px;
-
-  transition: background-color 250ms $timing-function;
 }
-.prices .order-link:hover,
-.prices .order-link:focus {
-  background-color: $accent-color;
-}
-@media screen and (min-width: $desktop - 1) {
-  .price-list {
-    display: flex;
+
+.prices-box {
+  margin-bottom: 50px;
+
+  @media screen and (max-width: $tablet - 1) {
+    padding: 30px;
   }
-  .price-list .left-item,
-  .price-list .right-item {
-    width: calc((100% - 55px * 2) / 2);
-    flex-grow: 1;
 
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1) {
     padding: 30px 40px;
   }
-  .price-list .left-item {
-    margin: 0;
-    background: linear-gradient(180deg, #171a24 0%, rgba(23, 26, 36, 0.2) 100%);
+
+  @media screen and (max-width: $desktop - 1) {
+    background: $gradient-price-light;
   }
-  .price-list .right-item {
-    background: linear-gradient(180deg, #090b13 0%, rgba(9, 11, 19, 0.2) 100%);
+
+  @media screen and (min-width: $desktop) {
+    @include flex(left, flex-start);
   }
-  .services-prices {
-    padding: 0;
+}
+
+.price-list {
+  @media screen and (min-width: $desktop) {
+    width: 50%;
+    padding: 30px 40px;
   }
+
+  &.left {
+    @media screen and (max-width: $desktop - 1) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      background: $gradient-price-light;
+    }
+  }
+
+  &.right {
+    @media screen and (min-width: $desktop) {
+      background: $gradient-price-dark;
+    }
+  }
+}
+
+.price-item {
+  display: flex;
+  align-items: baseline;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @include font($size: 14px, $height: 2.14);
+  color: $secondary-grey-color;
+
+  @media screen and (min-width: $tablet) {
+    @include font($size: 18px, $height: 1.67);
+  }
+}
+
+.underline {
+  height: 1px;
+  flex-grow: 1;
+  margin: 0 6px;
+
+  background-color: $underline-color;
+}
+
+.prices-order-link {
+  @extend .button-order;
+  color: $primary-white-color;
 }
