@@ -1,57 +1,54 @@
 <!-- Подвал -->
-<footer class="page-footer">
-  <!-- Онлайн-запись -->
-  <div class="first-container">
-    <div class="form-container container">
-      <form class="form-footer" autocomplete="off">
+<footer>
+  <div class="top-block">
+    <!-- Онлайн-запись -->
+    <div class="container first-container">
+      <form class="js-services-form" autocomplete="off">
         <p class="form-title">Онлайн-запись</p>
 
         <div class="form-flex">
           <!-- Имя -->
-          <div class="form-field">
+          <label class="form-field">
             <input
-              class="form-input"
-              type="text"
-              name="name"
-              id="name"
-              placeholder=" "
-              required
-            />
-            <label class="form-label" for="name">ИМЯ*</label>
-          </div>
+                   class="form-input"
+                   type="text"
+                   name="name"
+                   id="name"
+                   placeholder=" "
+                   required />
+            <span class="form-label">ИМЯ*</span>
+          </label>
 
           <!-- Телефон -->
-          <div class="form-field">
+          <label class="form-field">
             <input
-              class="form-input"
-              type="tel"
-              name="tel"
-              id="tel"
-              placeholder=" "
-              required
-            />
-            <label class="form-label" for="tel">ТЕЛЕФОН*</label>
-          </div>
+                   class="form-input"
+                   type="text"
+                   name="name"
+                   id="name"
+                   placeholder=" "
+                   required />
+            <span class="form-label">ТЕЛЕФОН*</span>
+          </label>
         </div>
 
         <!-- Поле для сообщения -->
-        <div class="message-field">
+        <label class="message-field">
           <textarea
                     class="message-input"
                     name="message"
                     id="message"
-                    rows="5"
-                    placeholder=" "></textarea>
-          <label class="message-label" for="message">СООБЩЕНИЕ</label>
-        </div>
+                    rows="4"
+                    placeholder=" "
+                    required></textarea>
+          <span class="message-label">СООБЩЕНИЕ</span>
+        </label>
+        <button class="button-send" type="submit">Отправить</button>
       </form>
-      <button class="send" type="submit">Отправить</button>
     </div>
-  </div>
 
-  <!-- Контакты -->
-  <div class="second-container">
-    <div class="contacts-container container">
+    <!-- Контакты -->
+    <div class="second-container container">
       <div class="address-container">
         <p class="contacts-title"><a name="contacts"></a>Контакты</p>
         <address class="address">
@@ -59,16 +56,15 @@
             <li class="address-item">
               <a
                  class="contacts-link"
-                 href="https://www.google.ru/maps/place/ул.+Большая+Васильковская,+7+а,+Киев,+08131"
+                 href="https://www.google.ru/maps/place/ул.+Васильковская,+7,+Киев,+02000"
                  target="_blank">
-                <svg class="icon-form">
+                <svg class="icon-form address">
                   <use href="./images/sprite.svg#icon-map-pin"></use>
                 </svg>
-                ул. Васильковая, 7А,<br class="line-brake" />Киев, 08132</a
-              >
+                ул. Васильковая, 7А,<br class="line-brake" />Киев, 08132</a>
             </li>
             <li class="address-item">
-              <a class="contacts-link" href="tel:+38 044 111 11 11">
+              <a class="contacts-link" href="tel:+380441111111">
                 <svg class="icon-form">
                   <use href="./images/sprite.svg#icon-phone"></use>
                 </svg>
@@ -92,16 +88,15 @@
       </div>
     </div>
   </div>
+  <div class="copyright-container container">
+    <!-- Социальные сети -->
+    <ul class="social-list">
+      <!-- <li class="social-item line"></li> -->
+      <li class="social-item"><a class="social-link" href="https://www.instagram.com" target="_blank">Instagram</a></li>
+      <li class="social-item"><a class="social-link" href="https://www.youtube.com" target="_blank">Youtube</a></li>
+    </ul>
+
+    <!-- Копирайт -->
+    <p class="copyright-text">&copy; Copyright 2020</p>
+  </div>
 </footer>
-
-<div class="copyright-container container">
-  <!-- Социальные сети -->
-  <ul class="social-list">
-    <!-- <li class="social-item line"></li> -->
-    <li class="social-item"><a class="social-link" href="">Instagram</a></li>
-    <li class="social-item"><a class="social-link" href="">Youtube</a></li>
-  </ul>
-
-  <!-- Копирайт -->
-  <p class="copyright-text">&copy; Copyright 2020</p>
-</div>
