@@ -1,17 +1,3 @@
-.about-section {
-  padding-top: $sec-pad-mob;
-  padding-bottom: $sec-pad-mob;
-
-  @media screen and (min-width: $tablet) {
-    padding-top: $sec-pad-tab;
-    padding-bottom: $sec-pad-tab;
-  }
-  @media screen and (min-width: $desktop) {
-    padding-top: $sec-pad-desk;
-    padding-bottom: $sec-pad-desk;
-  }
-}
-
 .container.about-us {
   @media screen and (min-width: $tablet) {
     display: flex;
@@ -58,7 +44,7 @@
   color: $primary-grey-color;
 }
 
-.sub-title.about-us:before {
+.sub-title.about-us::before {
   background-color: $primary-grey-color;
 }
 
