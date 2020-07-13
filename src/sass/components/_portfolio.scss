@@ -7,6 +7,7 @@
       padding-top: $sec-pad-tab;
       padding-bottom: $sec-pad-tab;
     }
+
     @media screen and (min-width: $desktop) {
       padding-top: $sec-pad-desk;
       padding-bottom: $sec-pad-desk;
@@ -28,17 +29,14 @@
   @media screen and (min-width: $tablet) {
     line-height: 1.36;
   }
+}
 
-  &:before {
-    position: absolute;
-    left: 0;
-    top: 0.6em;
-    content: '';
-    display: block;
-    width: 60px;
-    height: 1px;
-    background-color: $primary-grey-color;
-  }
+.sub-title.portfolio-text {
+  color: $primary-grey-color;
+}
+
+.sub-title.portfolio-text::before {
+  background-color: $primary-grey-color;
 }
 
 .portfolio-list {
@@ -59,6 +57,7 @@
     width: calc((100% - 60px) / 2);
     margin: 15px;
   }
+
   @media screen and (min-width: $desktop) {
     width: calc((100% - 120px) / 4);
   }
