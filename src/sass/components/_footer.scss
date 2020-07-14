@@ -63,6 +63,14 @@
   &:focus {
     border-color: $primary-white-color;
   }
+  &:valid {
+    border-color: green;
+    outline-color: green;
+  }
+
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    background: red;
+  }
 }
 
 .form-label {
