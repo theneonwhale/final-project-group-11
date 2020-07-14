@@ -90,13 +90,6 @@
     background: pink;
   }
 
-  &-input:invalid:focus:not(:placeholder-shown) {
-    & ~ .requirements {
-      max-height: 200px;
-      padding: 0 30px 20px 50px;
-    }
-  }
-
   &-label {
     position: absolute;
     top: 50%;
@@ -116,17 +109,6 @@
     transform: translateY(calc(-50% - 32px));
     @include font(400, 10px, 1.1, 0.01em);
   }
-}
-
-.requirements {
-  position: absolute;
-  padding: 0 30px 0 50px;
-  color: #999;
-  max-height: 0;
-  transition: 0.28s;
-  overflow: hidden;
-  color: red;
-  font-style: italic;
 }
 
 // Дата и время
