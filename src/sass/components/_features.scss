@@ -1,8 +1,8 @@
-.adv-main-title {
+.features-main-title {
   @extend %visually-hidden;
 }
 
-.adv-container {
+.features-container {
   @media screen and (min-width: $desktop) {
     display: flex;
     flex-direction: row-reverse;
@@ -11,7 +11,7 @@
   }
 }
 
-.adv-text-container {
+.features-text-container {
   margin-bottom: 44px;
 
   @media screen and (min-width: $desktop) {
@@ -21,22 +21,22 @@
   }
 }
 
-.sub-title.adv {
+.sub-title.features {
   color: $primary-grey-color;
 }
 
-.sub-title.adv::before {
+.sub-title.features::before {
   background-color: $primary-grey-color;
 }
 
-.adv-title {
+.features-title {
   display: inline-block;
   margin-bottom: 20px;
   @include font(700, 42px, 1.17, 0.05em, $heading-font);
   color: $primary-grey-color;
 }
 
-.adv-text {
+.features-text {
   margin-bottom: 0px;
   @include font();
   color: $tertiary-grey-color;
@@ -46,7 +46,7 @@
   }
 }
 
-.adv-list {
+.features-list {
   @media screen and (min-width: $mobile) {
     display: flex;
     flex-wrap: wrap;
@@ -65,7 +65,7 @@
   }
 }
 
-.adv-list-item {
+.features-list-item {
   display: block;
   background-color: $bg-grey-color;
   text-align: center;
@@ -134,13 +134,13 @@
   }
 }
 
-.adv-number {
+.features-number {
   position: relative;
   margin-bottom: 6px;
   @include font(700, 42px, 1.36, 0.05em);
 }
 
-.adv-plus {
+.features-plus {
   margin-left: 2px;
   position: absolute;
   top: 7px;
@@ -149,7 +149,7 @@
   color: $accent-color;
 }
 
-.adv-desc {
+.features-desc {
   @include font(600, 11px, 1.37, 0.009em);
   margin-bottom: 0;
 }
