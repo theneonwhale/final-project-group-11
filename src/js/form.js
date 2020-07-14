@@ -1,5 +1,5 @@
 (() => {
-  document.querySelectorAll('.js-services-form').forEach((el) => {
+  document.querySelectorAll('.js-services-form').forEach(el => {
     el.addEventListener('submit', e => {
       e.preventDefault();
 
@@ -8,6 +8,9 @@
       );
 
       e.currentTarget.reset();
+      alert(
+        'Ваша заявка принята. Мы с вами свяжемся в ближайшее время для уточнения деталей.',
+      );
     });
   });
 })();
