@@ -141,9 +141,7 @@
 }
 
 .price-item {
-  display: flex;
-  align-items: baseline;
-  text-align: left;
+  @include flex(left, baseline);
 
   &:not(:last-child) {
     margin-bottom: 20px;
@@ -155,6 +153,10 @@
   @media screen and (min-width: $tablet) {
     @include font($size: 18px, $height: 1.67);
   }
+}
+
+.price-item-title {
+  text-align: left;
 }
 
 .underline {
