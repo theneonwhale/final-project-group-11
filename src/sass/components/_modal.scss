@@ -90,13 +90,6 @@
     background: pink;
   }
 
-  &-input:invalid:focus:not(:placeholder-shown) {
-    & ~ .requirements {
-      max-height: 200px;
-      padding: 0 30px 20px 50px;
-    }
-  }
-
   &-label {
     position: absolute;
     top: 50%;
