@@ -1682,7 +1682,6 @@ label {
 }
 
 .button-submit {
-  min-width: max-content;
   margin: 0 auto;
   background-color: #ffffff;
 }
@@ -1760,7 +1759,6 @@ label {
 }
 .form-input:hover, .form-input:focus {
   border-color: #ffffff;
-  outline: none;
 }
 
 .form-label {
@@ -1813,7 +1811,6 @@ label {
 }
 .message-input:hover, .message-input:focus {
   border-color: #ffffff;
-  outline: none;
 }
 
 .message-label {
