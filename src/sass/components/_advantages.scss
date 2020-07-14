@@ -51,14 +51,17 @@
     display: flex;
     flex-wrap: wrap;
     margin-left: auto;
+    width: 418px;
+  }
+
+  @media screen and (min-width: $tablet) {
     width: 450px;
   }
 
   @media screen and (min-width: $desktop) {
     margin-left: 0;
-    width: calc(50% - 15px);
-    padding-left: 100px;
-    padding-right: 100px;
+    margin-right: 100px;
+    width: 370px;
   }
 }
 
@@ -148,5 +151,5 @@
 
 .adv-desc {
   @include font(600, 11px, 1.37, 0.009em);
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
