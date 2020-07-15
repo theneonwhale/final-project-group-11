@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("/ralewaybold.47e4d76f.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
 .checkbox, .portfolio-title, .feature-main-title {
   position: absolute;
   top: 0px;
